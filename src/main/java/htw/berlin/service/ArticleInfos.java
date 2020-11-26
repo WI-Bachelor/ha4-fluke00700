@@ -6,6 +6,8 @@ import java.util.Map;
 
 public class ArticleInfos {
 
+
+
   private ArticleInfos() {}
 
   public static Map<Integer, ArticleData> buns = Map.of(

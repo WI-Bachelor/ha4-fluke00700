@@ -23,7 +23,7 @@ class BurgerBuilderImplTest {
 
 
 
-    assertEquals("6.95", burgerImpl.calculatePrice().toString());
+    assertEquals("6.95",burgerImpl.calculatePrice().toString() );
 
   }
 
