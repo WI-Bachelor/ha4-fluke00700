@@ -1,23 +1,21 @@
 package htw.berlin.service;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.NavigableMap;
+import java.util.*;
 
 public final class ArticleInfos {
   private static ArticleInfos articleInstance = null;
-  private static ArticleInfos getarticleInstance(){
+  private static ArticleInfos getInstance(){
         if(articleInstance==null)
             articleInstance = new ArticleInfos();
     return articleInstance;
   }
 
 
-  private ArticleInfos() {}
+  private ArticleInfos() {getInstance();}
 
   public static Map<Integer, ArticleData> buns = Map.of(
-      123, new ArticleData("Burger", new BigDecimal("1.50")),
+      123, new ArticleData("Burgerbrot", new BigDecimal("1.50")),
       200, new ArticleData("Ciabatta", new BigDecimal("1.90")));
   public static Map<Integer, ArticleData> patties  = Map.of(
       300, new ArticleData("Rindfleisch", new BigDecimal("4.50")),
@@ -47,24 +45,24 @@ public final class ArticleInfos {
     return String.join(" ", getAllArticlesNames());
   }
     public static Map<String, Integer> getArticles() {
-      NavigableMap <Integer,ArticleData> aData = (NavigableMap<Integer, ArticleData>) getAllArticles();
-      Map<String, Integer> articles = new HashMap<>();
+    Map<String, Integer> articles = new HashMap<>();
+        var it = getAllArticles().entrySet().iterator();
+            
+        while (it.hasNext()) {
+            if(!it.hasNext()){
+                throw new NoSuchElementException();
+            }
+            var currentKey= it.next().getKey();
+            articles.put(getAllArticles().get(currentKey).getName(), currentKey);
 
-      articles.put(aData.get(aData.firstKey()).getName(),aData.firstKey());
-        int i = 0;
-        int previousKey = aData.firstKey();
-        while(i < articles.size()-1)
-        {
-            articles.put(aData.get(aData.ceilingKey(previousKey)).getName(),aData.ceilingKey(previousKey));
-            previousKey = aData.ceilingKey(previousKey);
-            i = i + 1;
+
         }
 
       return articles;
     }
   
-  
-  
+
+
   public static String[] getAllArticlesNames(){
       Map<Integer, ArticleData> articles = getAllArticles();
       Integer[] articlesKeys = articles.keySet().toArray(new Integer[0]);

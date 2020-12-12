@@ -7,7 +7,7 @@ public class Salad extends AbstractIngredient{
     public Salad(int id, BigDecimal bigDecimal,String name)
     {
 
-        super(id,bigDecimal,name+" als Salatbeilage");
+        super(id,bigDecimal,name);
 
     }
     }

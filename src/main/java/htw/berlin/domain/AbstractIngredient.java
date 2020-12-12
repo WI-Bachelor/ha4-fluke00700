@@ -8,17 +8,19 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+import static htw.berlin.service.ArticleInfos.*;
+
 public abstract class AbstractIngredient implements Ingredient
     {
         String name;
         BigDecimal price = BigDecimal.ZERO;
         double calories;
-
+        int id;
 
         public AbstractIngredient(int id,BigDecimal bigDecimal,String name) {
             this.name = name;
             this.price = bigDecimal;
-
+            this.id=id;
 
 
 
@@ -41,7 +43,13 @@ public abstract class AbstractIngredient implements Ingredient
 
         @Override
         public String toString() {
-            return this.name;
+        if(veggies.containsKey(id))
+            this.name=name+" als Gemuesebeilage";
+        if(salads.containsKey(id))
+            this.name=name+" als Salatbeilage";
+        if(sauces.containsKey(id))
+            this.name=name+" als Sauce";
+        return this.name;
         }
     }
 

@@ -7,7 +7,7 @@ public class Sauce extends AbstractIngredient{
       public Sauce(int id, BigDecimal bigDecimal,String name)
       {
 
-            super(id,bigDecimal,name+" als Sauce");
+            super(id,bigDecimal,name);
 
       }
 

@@ -21,7 +21,7 @@ public class ChatbotIngredientIntegrationTest {
     @DisplayName("should understand a simple order and list the burger's individual ingredients and it's price")
     void integrationTestSimpleOrder() {
         String orderQuestion = "Willkommen beim Burgerbot! Was moechtest du gerne bestellen?";
-        String simpleOrder = "Ich haette gerne einen Burger mit Rindfleisch, Eisbergsalat, Tomate und Ketchup";
+        String simpleOrder = "Ich haette gerne einen Burgerbrot mit Rindfleisch, Eisbergsalat, Tomate und Ketchup";
         String confirmationQuestion = "Willst du die Bestellung abschliessen?";
         String orderConfirmation = "Bestellung abschliessen";
         UserInputWrapper input = mock(UserInputWrapper.class);
