@@ -1,6 +1,7 @@
 package htw.berlin.ui;
 
 import htw.berlin.domain.Burger;
+import htw.berlin.service.ArticleInfos;
 import htw.berlin.service.BurgerBuilder;
 
 import java.util.*;
@@ -17,12 +18,13 @@ public class ChatbotUI {
     }
 
     public String launch() {
+
         String inputLine = input.ask("Willkommen beim Burgerbot! Was moechtest du gerne bestellen?");
         while (!(inputLine.equals("Bestellung abschliessen") || inputLine.equals("Auf Wiedersehen"))) {
             List<Integer> articles = articleIdsFromOrder(inputLine);
             if(articles.isEmpty()) {
                 inputLine = input.ask("Entschuldigung, ich habe dich nicht verstanden. Waehle aus folgenden Zutaten: "
-                        + Menu.printAllArticles());
+                        + ArticleInfos.printAllArticles());
             } else {
                 builder.addIngredientsById(articles);
                 Burger burger = builder.build();
@@ -35,9 +37,9 @@ public class ChatbotUI {
 
     // nur public zum einfacheren Testen
     public List<Integer> articleIdsFromOrder(String inputLine) {
-        Set<String> articles = Menu.getAllArticles().keySet();
+        Set<String> articles = ArticleInfos.getArticles().keySet();
         Map<String, Integer> articleCount = parser.countKeywords(inputLine, articles);
-        Map<String, Integer> articleMap = Menu.getAllArticles();
+        Map<String, Integer> articleMap = ArticleInfos.getArticles();
         List<Integer> ids = new ArrayList<>();
 
         for (Map.Entry<String, Integer> entry : articleCount.entrySet()) {

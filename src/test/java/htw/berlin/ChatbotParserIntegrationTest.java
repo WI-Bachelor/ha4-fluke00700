@@ -20,7 +20,7 @@ public class ChatbotParserIntegrationTest {
     @DisplayName("should understand an order and trigger a burger build with the right article ids")
     void integrationTestSimpleOrderWithInputParser() {
         String orderQuestion = "Willkommen beim Burgerbot! Was moechtest du gerne bestellen?";
-        String simpleOrder = "Ich haette gerne einen Burger mit Rindfleisch Eisbergsalat Tomate und Ketchup";
+        String simpleOrder = "Ich haette gerne einen Burgerbrot mit Rindfleisch Eisbergsalat Tomate und Ketchup";
         String confirmationQuestion = "Willst du die Bestellung abschliessen?";
         String orderConfirmation = "Bestellung abschliessen";
         UserInputWrapper input = mock(UserInputWrapper.class);
@@ -34,6 +34,6 @@ public class ChatbotParserIntegrationTest {
         ChatbotUI ui = new ChatbotUI(input, builder, new CommaAndWhitespaceSplittingInputParser());
 
         assertEquals("Bestellung abschliessen", ui.launch());
-        verify(builder).addIngredientsById(Arrays.asList(100, 300, 500, 700, 900));
+        verify(builder).addIngredientsById(Arrays.asList(123, 300, 500, 700, 900));
     }
 }
