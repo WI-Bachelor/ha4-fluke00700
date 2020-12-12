@@ -5,6 +5,5 @@ import java.util.List;
 
 public interface Burger {
     BigDecimal calculatePrice();
-    double calculateCalories();
     List<Ingredient> getIngredients();
 }

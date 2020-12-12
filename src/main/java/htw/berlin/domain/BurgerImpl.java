@@ -27,20 +27,7 @@ public class BurgerImpl implements Burger {
         return totalPrice;
     }
 
-    @Override
-    public double calculateCalories() {
-        // TODO (3): Gesamtkalorien des Burgers auf Basis der Kalorien der Einzelzutaten berechnen
-        double totalCalorie = 0;
-        if (ingredients != null) {
-            for (int i = 0; i < ingredients.size(); i++) {
-                if (ingredients.get(i) != null) {
-                    totalCalorie = totalCalorie+ingredients.get(i).getCalories();
-                }
 
-            }
-        }
-        return totalCalorie;
-    }
 
     @Override
     public List<Ingredient> getIngredients() {

@@ -31,7 +31,7 @@ public class ChatbotIngredientIntegrationTest {
         ChatbotUI ui = new ChatbotUI(input, new BurgerBuilderImpl(), new CommaAndWhitespaceSplittingInputParser());
 
         String expectedMessage =  "In Ordnung. Dein Burger mit " +
-            "[normalem Burgerbrot, Rindfleisch, Eisbergsalat als Salatbeilage, Tomate als Gemuesebeilage, Ketchup als Sauce] " +
+            "[Burgerbrot, Rindfleisch, Eisbergsalat als Salatbeilage, Tomate als Gemuesebeilage, Ketchup als Sauce] " +
             "kostet 7.35 Euro. " +
             "Willst du die Bestellung abschliessen?";
 

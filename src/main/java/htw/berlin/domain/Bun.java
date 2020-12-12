@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 public class Bun extends AbstractIngredient{
      String name;
 
-    public Bun(int id, BigDecimal bigDecimal, double cal, String name)
+    public Bun(int id, BigDecimal bigDecimal, String name)
     {
-        super(id,bigDecimal,cal,name);
+        super(id,bigDecimal,name);
 
     }
 

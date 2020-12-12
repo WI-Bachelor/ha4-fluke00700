@@ -6,7 +6,7 @@ import java.util.List;
 public interface Ingredient {
   String getName();
   BigDecimal getPrice();
-  double getCalories();
+
 
 }
 

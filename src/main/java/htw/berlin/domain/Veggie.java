@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 
 public class Veggie extends AbstractIngredient{
       String name;
-    public Veggie(int id, BigDecimal bigDecimal, double cal, String name)
+    public Veggie(int id, BigDecimal bigDecimal,String name)
     {
-        super(id,bigDecimal,cal,name+" als Gemuesebeilage");
+        super(id,bigDecimal,name+" als Gemuesebeilage");
 
     }
 }

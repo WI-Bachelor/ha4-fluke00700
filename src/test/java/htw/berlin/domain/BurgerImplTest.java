@@ -14,7 +14,7 @@ class BurgerImplTest {
     @DisplayName("should build a burger from article ids")
     void testBuildBurger() {
         BurgerBuilder burgerBuilder = new BurgerBuilderImpl();
-        List<Integer> ids = List.of(100, 300, 900);
+        List<Integer> ids = List.of(123,300,900);
         burgerBuilder.addIngredientsById(ids);
         Burger burger = burgerBuilder.build();
 

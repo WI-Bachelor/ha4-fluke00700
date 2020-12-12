@@ -16,31 +16,20 @@ class BurgerBuilderImplTest {
   @DisplayName("should calculate the total price of all the ingredients")
   void testBuildBurger() {
     BurgerBuilder burgerBuilder = new BurgerBuilderImpl();
-    List<Integer> ids = List.of(100,300,700,900);
+    List<Integer> ids = List.of(123,300,700,900,610);
     burgerBuilder.addIngredientsById(ids);
     Burger burger = burgerBuilder.build();
     BurgerImpl burgerImpl = new BurgerImpl(burger.getIngredients());
 
 
 
-    assertEquals("6.95",burgerImpl.calculatePrice().toString() );
-
-  }
-
-  @Test
-  @DisplayName("should calculate the total amount of calories from all the ingredients")
-  void testBuildBurger2() {
-    BurgerBuilder burgerBuilder = new BurgerBuilderImpl();
-    List<Integer> ids = List.of(100,300,700,900,1000);
-    burgerBuilder.addIngredientsById(ids);
-    Burger burger = burgerBuilder.build();
-    BurgerImpl burgerImpl = new BurgerImpl(burger.getIngredients());
-
-
-
-    assertEquals(585.0, burgerImpl.calculateCalories());
+    assertEquals("7.45",burgerImpl.calculatePrice().toString() );
 
   }
 
 
-}
+
+  }
+
+
+

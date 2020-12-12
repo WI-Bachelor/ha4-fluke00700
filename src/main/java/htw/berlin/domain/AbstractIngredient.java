@@ -15,15 +15,10 @@ public abstract class AbstractIngredient implements Ingredient
         double calories;
 
 
-        public AbstractIngredient(int id,BigDecimal bigDecimal,double cal,String name) {
-            if(id==100)
-            this.name = "normalem "+name+"brot";
-            else
+        public AbstractIngredient(int id,BigDecimal bigDecimal,String name) {
             this.name = name;
-
-
             this.price = bigDecimal;
-            this.calories = cal;
+
 
 
 

@@ -4,10 +4,10 @@ import java.math.BigDecimal;
 
 public class Sauce extends AbstractIngredient{
       String name;
-      public Sauce(int id, BigDecimal bigDecimal, double cal, String name)
+      public Sauce(int id, BigDecimal bigDecimal,String name)
       {
 
-            super(id,bigDecimal,cal,name+" als Sauce");
+            super(id,bigDecimal,name+" als Sauce");
 
       }
 

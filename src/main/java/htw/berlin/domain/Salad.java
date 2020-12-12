@@ -4,10 +4,10 @@ import java.math.BigDecimal;
 
 public class Salad extends AbstractIngredient{
       String name;
-    public Salad(int id, BigDecimal bigDecimal, double cal, String name)
+    public Salad(int id, BigDecimal bigDecimal,String name)
     {
 
-        super(id,bigDecimal,cal,name+" als Salatbeilage");
+        super(id,bigDecimal,name+" als Salatbeilage");
 
     }
     }

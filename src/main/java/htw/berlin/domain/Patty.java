@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 
    public class Patty extends AbstractIngredient {
       String name;
-       public Patty(int id, BigDecimal bigDecimal, double cal, String name)
+       public Patty(int id, BigDecimal bigDecimal,String name)
        {
-           super(id,bigDecimal,cal,name);
+           super(id,bigDecimal,name);
 
        }
     }
