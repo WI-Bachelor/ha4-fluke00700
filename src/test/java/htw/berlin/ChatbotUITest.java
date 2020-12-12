@@ -26,7 +26,7 @@ public class ChatbotUITest {
 
         InputParser parser = mock(InputParser.class);
         when(parser.countKeywords(anyString(), anySet())).thenReturn(Map.of(
-                "Burger", 0,
+                "Burgerbrot", 0,
                 "Ciabatta", 0,
                 "Rindfleisch", 0,
                 "Falafel", 0,
@@ -48,7 +48,7 @@ public class ChatbotUITest {
     void canGetArticleIds() {
         InputParser parser = mock(InputParser.class);
         when(parser.countKeywords(anyString(), anySet())).thenReturn(Map.of(
-                "Burger", 1,
+                "Burgerbrot", 1,
                 "Ciabatta", 0,
                 "Rindfleisch", 0,
                 "Falafel", 0,
@@ -61,8 +61,8 @@ public class ChatbotUITest {
         ));
         ChatbotUI ui = new ChatbotUI(null, null, parser);
 
-        var expected = Arrays.asList(100, 700);
-        var actual = ui.articleIdsFromOrder("Ich haette gerne einen Burger mit Tomate");
+        var expected = Arrays.asList(123, 700);
+        var actual = ui.articleIdsFromOrder("Ich haette gerne einen Burgerbrot mit Tomate");
         assertEquals(expected, actual);
     }
 
@@ -71,7 +71,7 @@ public class ChatbotUITest {
     void canGetArticleIdsMultipleTimes() {
         InputParser parser = mock(InputParser.class);
         when(parser.countKeywords(anyString(), anySet())).thenReturn(Map.of(
-            "Burger", 1,
+            "Burgerbrot", 1,
             "Ciabatta", 0,
             "Rindfleisch", 3,
             "Falafel", 0,
@@ -84,8 +84,8 @@ public class ChatbotUITest {
         ));
         ChatbotUI ui = new ChatbotUI(null, null, parser);
 
-        var expected = Arrays.asList(100, 300, 300, 300, 700);
-        var actual = ui.articleIdsFromOrder("Ich haette gerne einen Burger mit Rindfleisch, Rindfleisch, Rindfleisch und Tomate");
+        var expected = Arrays.asList(123, 300, 300, 300, 700);
+        var actual = ui.articleIdsFromOrder("Ich haette gerne einen Burgerbrot mit Rindfleisch, Rindfleisch, Rindfleisch und Tomate");
         assertEquals(expected, actual);
     }
 }
